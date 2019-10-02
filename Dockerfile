@@ -3,7 +3,8 @@ FROM jgillis/jupyter-octave:latest
 USER root
 
 
-ADD https://github.com/casadi/binaries/releases/download/commit-2e2149b/casadi-linux-octave-4.2.2-2e2149b.tar.gz /tmp/octave.tar.gz
+#ADD https://github.com/casadi/binaries/releases/download/commit-2e2149b/casadi-linux-octave-4.2.2-2e2149b.tar.gz /tmp/octave.tar.gz
+ADD https://github.com/casadi/binaries/releases/download/commit-bc66d96/casadi-linux-octave-4.2.2-bc66d96.tar.gz /tmp/octave.tar.gz
 RUN chown $NB_USER:$NB_GID /tmp/octave.tar.gz
 
 USER $NB_UID
@@ -13,6 +14,7 @@ RUN rm /tmp/octave.tar.gz
 
 RUN echo "addpath('$HOME/casadi');" > $HOME/.octaverc
 
+RUN conda install -c damianavila82 RISE
 COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
