@@ -4,7 +4,7 @@ USER root
 
 
 #ADD https://github.com/casadi/binaries/releases/download/commit-2e2149b/casadi-linux-octave-4.2.2-2e2149b.tar.gz /tmp/octave.tar.gz
-ADD https://github.com/casadi/binaries/releases/download/commit-bc66d96/casadi-linux-octave-4.2.2-bc66d96.tar.gz /tmp/octave.tar.gz
+ADD https://github.com/casadi/casadi/releases/download/3.5.0/casadi-linux-octave-4.2.2-v3.5.0.tar.gz /tmp/octave.tar.gz
 RUN chown $NB_USER:$NB_GID /tmp/octave.tar.gz
 
 USER $NB_UID
